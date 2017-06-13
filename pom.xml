@@ -6,23 +6,27 @@
       <!-- 依赖仓库 设置从aliyun仓库下载-->
 	<repositories>
 		<repository>
-			<id>dev-nexus</id>
-			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
+			<id>alimaven</id>
+			<url>http://maven.aliyun.com/nexus/content/repositories/central/</url>
 			<snapshots>
 				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
 			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
 		</repository>
 	</repositories>
 	<!-- 插件依赖仓库 -->
 	<pluginRepositories>
 		<pluginRepository>
-			<id>dev-nexus</id>
-			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+			<id>alimaven</id>
+			<url>http://maven.aliyun.com/nexus/content/repositories/central/</url>
 			<snapshots>
 				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
 			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
 		</pluginRepository>
 	</pluginRepositories>
   
