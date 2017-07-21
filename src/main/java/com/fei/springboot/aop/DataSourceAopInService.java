@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.core.PriorityOrdered;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.fei.springboot.config.dbconfig.DataSourceContextHolder;
 import com.fei.springboot.config.dbconfig.DataSourceType;
@@ -64,8 +65,12 @@ private static Logger log = LoggerFactory.getLogger(DataSourceAopInService.class
     
 	@Override
 	public int getOrder() {
-		
-		return HIGHEST_PRECEDENCE;
+		/**
+		 * 值越小，越优先执行
+		 * 要优于事务的执行
+		 * 在启动类中加上了@EnableTransactionManagement(order = 10) 
+		 */
+		return 1;
 	}
 
 }
